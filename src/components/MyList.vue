@@ -3,15 +3,9 @@
     <h1 
     v-if="showing"
     v-bind:title="msg">
+    <span v-if="err">{{fail}}</span>
     give me the {{item.foodName}}
-    <span v-if="err">, {{fail}}</span>
     </h1>
-    
-    <!--<p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>-->
     <input type="text" v-model="msg" @keyup.enter="getItem()">
     <button v-on:click="getItem">Add grapes</button>
 
@@ -39,7 +33,13 @@ export default {
         {foodId: 10, foodName: 'samsung'},
         {foodId: 11, foodName: 'pain'},
         {foodId: 12, foodName: 'Multivitaminsaft'},
-        {foodId: 13, foodName: 'AK-47'}
+        {foodId: 13, foodName: 'AK-47'},
+        {foodId: 14, foodName: 'dogfood'},
+        {foodId: 15, foodName: 'pikachu'},
+        {foodId: 16, foodName: 'tiramisu'},
+        {foodId: 17, foodName: 'artischocken'},
+        {foodId: 18, foodName: 'aloavera'},
+        {foodId: 19, foodName: 'pinzette'}
       ],
       item: []
     }
@@ -64,7 +64,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1{
   background-color: whitesmoke;
